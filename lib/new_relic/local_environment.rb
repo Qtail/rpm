@@ -160,9 +160,7 @@ module NewRelic
     end
 
     def check_for_sidekiq
-      if defined?(::Sidekiq) && File.basename($0) == 'sidekiq'
-        @discovered_dispatcher = :sidekiq
-      end
+      false
     end
 
     def check_for_thin

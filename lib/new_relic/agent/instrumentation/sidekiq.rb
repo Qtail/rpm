@@ -6,7 +6,7 @@ DependencyDetection.defer do
   @name = :sidekiq
 
   depends_on do
-    defined?(::Sidekiq) && !NewRelic::Agent.config[:disable_sidekiq]
+    false
   end
 
   executes do
@@ -68,5 +68,6 @@ DependencyDetection.defer do
         end
       end
     end
+    
   end
 end
